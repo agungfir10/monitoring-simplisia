@@ -49,11 +49,11 @@ app.get('/engines/:engine/status/:status', async function (req, res) {
 app.get('/create', async function (req, res) {
   try {
     const timestamp = Timestamp.fromDate(new Date());
-    const { type = 'Tidak Ada', temp = 0, humidity = 0 } = req.query;
+    const { type = 'Tidak Ada', temp = 0, turbidity = 0 } = req.query;
     await db.collection('results').add({
       type,
       temp,
-      humidity,
+      turbidity,
       createdAt: timestamp,
     });
     res.json({
