@@ -5,7 +5,7 @@ var serviceAccount = require('./serviceAccountKey.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://simplisia-monitoring.firebaseio.com',
+  databaseURL: 'https://monitoring-simplisia.firebaseio.com',
 });
 
 const db = getFirestore();
